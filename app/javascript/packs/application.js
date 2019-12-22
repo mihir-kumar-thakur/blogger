@@ -11,6 +11,12 @@ require("channels")
 import "bootstrap"
 import './src/application.scss'
 
+import $ from 'jquery'
+global.$ = jQuery
+
+// rails action text
+require("trix")
+require("@rails/actiontext")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,3 +30,10 @@ document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 });
+
+// auto vanish alert after two seconds
+window.setTimeout(function() {
+  $(".alert").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove(); 
+  });
+}, 2000);

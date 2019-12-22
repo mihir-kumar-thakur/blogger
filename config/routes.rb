@@ -2,5 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   devise_for :users
-  resources :posts
+  resources :posts do
+    resource :like, only: [:create, :destroy]
+  end
 end

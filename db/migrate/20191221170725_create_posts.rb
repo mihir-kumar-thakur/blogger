@@ -5,7 +5,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.datetime :published_at
       t.boolean :published, default: false
       t.belongs_to :user
-      t.text :content
 
       t.timestamps
     end

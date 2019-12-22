@@ -1,0 +1,8 @@
+<h5><strong>New Post</strong></h5>
+<hr>
+
+<%= render partial: 'shared/error_message', locals: { target: @post } %>
+
+<%= simple_form_for @post do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+<% end %>
