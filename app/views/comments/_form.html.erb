@@ -1,0 +1,14 @@
+<%= render partial: 'shared/error_message', locals: { target: @comment } %>
+
+<%= simple_form_for [@commentable, @comment] do |f| %>
+
+  <%= f.hidden_field :parent_id %>
+  
+  <div class="form-group">
+    <%= f.input_field :content, class: 'form-control', required: true %>
+  </div>  
+
+  <%= f.button :submit, class: 'btn-primary' %>
+<% end %>
+
+<hr>

@@ -1,0 +1,16 @@
+<a class="pull-left mr-1" href="#">
+  <img class="media-object" src="https://via.placeholder.com/150" style="width: 64px; height: 64px;"/>
+</a>
+<div class="media">
+  <div class="media-body">
+    <div class="media-heading"><strong class=""><%= comment.user.name %> </strong> <%= time_ago_in_words(comment.created_at) %> ago</div>
+    <p class="comment_content">
+      <%= simple_format comment.content %>
+    </p>
+    <div class="actions mb-2 comment_reply_link">
+      <%= link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment) %>
+    </div>
+
+    <%= nested_comments comment.children %>
+  </div>
+</div>

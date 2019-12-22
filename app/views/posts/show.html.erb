@@ -22,5 +22,11 @@
     <hr>
 
     <%= @post.content %>
+
+    <hr>
+    <h5>Comments</h5>
+
+    <%= nested_comments @comments %>
+    <%= render "comments/form" %>
   </div>
 </div>

@@ -5,6 +5,9 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+  validates :name, presence: true
 
   def likes?(post)
     post.likes.where(user_id: id).any?

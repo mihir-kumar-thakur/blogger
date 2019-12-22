@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # include Commentable
   skip_before_action :authenticate_user!, raise: false, only: [:show]
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
@@ -23,6 +24,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @commentable = params[:controller].singularize.classify.constantize.friendly.find(params[:id])
+    @comments = @commentable.comments.arrange(:order => :created_at)
+    @comment = Comment.new
   end
 
   def edit
