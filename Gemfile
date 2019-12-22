@@ -43,9 +43,6 @@ gem 'pagy'
 # tree like structure
 gem 'ancestry', '~> 3.0', '>= 3.0.7'
 
-#browser specific time
-gem 'local_time'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
