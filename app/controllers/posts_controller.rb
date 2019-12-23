@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-  # include Commentable
   skip_before_action :authenticate_user!, raise: false, only: [:show]
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   
   def index
-    @pagy, @posts = pagy(current_user.posts)
+    @posts = current_user.posts.paginate(page: params[:page])
   end
 
   def new

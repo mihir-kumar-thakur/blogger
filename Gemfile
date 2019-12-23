@@ -38,7 +38,7 @@ gem 'simple_form'
 gem 'friendly_id', '~> 5.2.4'
 
 #pagination
-gem 'pagy'
+gem 'will_paginate', '~> 3.2', '>= 3.2.1'
 
 # tree like structure
 gem 'ancestry', '~> 3.0', '>= 3.0.7'
