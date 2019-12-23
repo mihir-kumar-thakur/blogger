@@ -9,7 +9,8 @@
             </h2>
           <% end %>
           <p class="post-meta">Posted by
-            <a href="#"><%= post.user.name %></a> on <%= post.published_at %></p>
+            <a href="#"><%= post.user.name %></a> on <%= time_ago_in_words(post.published_at) %> ago
+          </p>
         </div>
       <% end %>
       <hr>
