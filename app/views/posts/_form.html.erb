@@ -1,7 +1,7 @@
 <%= f.label :title, class: 'font-weight-bold' %>
 <%= f.input :title, error: 'Title is mandatory, please specify one', label: false %>
 <%= f.label "Image Upload", class: 'font-weight-bold' %>
-<%= f.file_field :image, class: 'mb-2 form-control-file' %>
+<%= f.file_field :image, class: 'mb-2 form-control-file', required: true %>
 <%= f.label "Content", class: 'font-weight-bold' %>
 <%= f.rich_text_area :content, label: "Content", class: 'mb-2' %>
 <%= f.input :published %>

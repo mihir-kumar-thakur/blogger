@@ -7,7 +7,7 @@
 
     <hr>
     <!-- Preview Image -->
-    <%= image_tag @post.image, class: 'img-fluid rounded' %>
+    <%= image_tag @post.image, class: 'img-fluid rounded' if @post.image.present? %>
     <hr>
 
     <%= @post.content %>
