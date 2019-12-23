@@ -1,7 +1,5 @@
 <% if current_user&.likes?(post) %>
-  <%= link_to_if user_signed_in?, "Unlike", post_like_path(post), method: :delete, remote: true %>
+  <%= link_to_if user_signed_in?, text_with_badge('Unlike', post.likes.count), post_like_path(post), method: :delete, remote: true, class: 'btn btn-warning btn-sm' %>
 <% else %>
-  <%= link_to_if user_signed_in?, 'Like', post_like_path(post), method: :post, remote: true %>
+  <%= link_to_if user_signed_in?, text_with_badge('Like', post.likes.count), post_like_path(post), method: :post, remote: true, class: 'btn btn-success btn-sm' %>
 <% end %>
-
-<%= post.likes.count %>

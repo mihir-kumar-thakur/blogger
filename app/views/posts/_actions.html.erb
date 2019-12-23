@@ -1,4 +1,10 @@
-<% if user_signed_in? %>
-  <%= link_to "Edit", edit_post_path(post), class: "mr-5" %>
-  <%= link_to "Destroy", post_path(post), method: :delete, data: { confirm:"Are you sure?" } %>
-<% end %>
+<div class="col-sm-12 d-inline-flex">
+  <% if user_signed_in? && post.user_id == current_user.id %>
+    <%= link_to "Edit", edit_post_path(post), class: "mr-3 btn btn-info btn-sm" %>
+    <%= link_to "Destroy", post_path(post), method: :delete, data: { confirm:"Are you sure?" }, class: "mr-3 btn btn-danger btn-sm" %>
+  <% end %>
+  <!-- post likes -->
+  <div id="post_<%= @post.id %>_likes">
+    <%= render partial: "likes", locals: {post: @post} %>
+  </div>
+</div>

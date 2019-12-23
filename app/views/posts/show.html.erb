@@ -1,21 +1,10 @@
  <div class="row">
   <div class="col-sm-12">
-    <h1 class="mt-4"><%= @post.title %></h1>
-    <p class="lead">by
-      <a href="#">Start Bootstrap</a>
-    </p>
+    <h1 class="mt-4 mb-0"><%= @post.title %></h1>
+    <small>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %></small>
 
     <%= render partial: "actions", locals: { post: @post } %>
 
-    <hr>
-    <!-- Date/Time -->
-    <p>Posted on <%= @post.published_at %></p>
-    
-    <!-- post likes -->
-    <div id="post_<%= @post.id %>_likes">
-      <%= render partial: "likes", locals: {post: @post} %>
-    </div>
-    
     <hr>
     <!-- Preview Image -->
     <%= image_tag @post.image, class: 'img-fluid rounded' %>
