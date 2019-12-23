@@ -32,3 +32,10 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+backblaze:
+  service: Backblaze
+  bucket_name: mihir-data
+  bucket_id: dee8ed79b16c7c1e6ac00d18
+  key_id: e8d91ccea0d8
+  key_token: 0007f4e205eb7f5d649d2fe2e428c9b070d7462163

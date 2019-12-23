@@ -46,6 +46,8 @@ gem 'ancestry', '~> 3.0', '>= 3.0.7'
 # herouku asset serving
 gem 'rails_12factor', group: :production
 
+# backblaze as active storage provider
+gem 'activestorage-backblaze'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
